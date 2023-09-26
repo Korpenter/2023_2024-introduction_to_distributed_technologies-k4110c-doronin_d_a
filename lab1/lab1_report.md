@@ -12,7 +12,7 @@ Date of finished:
 #### Цель работы
 Ознакомиться с инструментами Minikube и Docker, развернуть свой первый "под".
 #### Ход выполнения работы
-После установки minikube и развёртки minikube cluster, скачиватся docker-образ vault командой:
+После установки minikube и развёртывания minikube cluster, скачивается docker-образ vault командой:
 ```shell
 docker pull vault:1.13.3
 ```
@@ -23,7 +23,7 @@ docker pull vault:1.13.3
 </details>
 
 
-После загрузки образа создаётся описание манифеста - файл vault-pod.yaml:
+После загрузки образа создаётся файл манифеста с названием vault-pod.yaml:
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -38,7 +38,7 @@ spec:
     ports:
     - containerPort: 8200
 ```
-Создаётся Pod и проверяется его состояние командами:
+Создаётся Pod, и его состояние проверяется командами:
 ```shell
 kubectl create -f vault-pod.yam
 kubectl get pods
@@ -49,7 +49,7 @@ kubectl get pods
 ![screenshot_2](https://github.com/Korpenter/url-shortener/assets/141184937/4166009f-0bcc-419e-99c6-13b16e92e6eb)
 </details>
 
-Создаётся сервис для получения доступка к Vault, трафик перенаправляется на локальный порт, и для проверки корректности выполненых действий, открывается страница авторизации Vault `http://localhost:8200`,:
+Создаётся сервис для получения доступа к Vault, трафик перенаправляется на локальный порт. Для проверки корректности выполненных действий открывается страница авторизации Vault:`http://localhost:8200`:
 ```shell
 minikube kubectl -- expose pod vault --type=NodePort --port=8200
 minikube kubectl -- port-forward service/vault 8200:8200
@@ -65,8 +65,9 @@ minikube kubectl -- port-forward service/vault 8200:8200
 ![screenshot_4](https://github.com/Korpenter/url-shortener/assets/141184937/eac2028f-97d1-4983-ba3b-2e4b3d470a1c)
 </details>
 
- и находится токен для авторизации в логах пода, выполнив команду:
+Токен для авторизации можно найти в логах, выполнив одну из комманд:
 ```shell
+kubectl logs vault
 kubectl logs service/vault
 ```
 <details>
