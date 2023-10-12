@@ -59,7 +59,7 @@ kubectl create -f frontend-balancer.yaml
 kubectl -- port-forward service/frontend-port 8888:80
 ```
 <details>
-<summary>frontend-Nodeport.yaml</summary>
+<summary>frontend-balancer.yaml</summary>
 
 ```yaml
 apiVersion: v1
