@@ -6,7 +6,7 @@ Group: K4110C
 Author: Doronin Dmitrii Alekseevich  
 Lab: Lab1  
 Date of create: 25.09.2023  
-Date of finished:  
+Date of finished: 12.10.2023
 
 ## Лабораторная работа №1 "Установка Docker и Minikube, мой первый манифест."
 #### Цель работы

@@ -6,7 +6,7 @@ Group: K4110C
 Author: Doronin Dmitrii Alekseevich  
 Lab: Lab2  
 Date of create: 12.10.2023  
-Date of finished:  
+Date of finished: 12.10.2023
 
 ## Лабораторная работа №2 "Развертывание веб сервиса в Minikube, доступ к веб интерфейсу сервиса. Мониторинг сервиса."
 #### Цель работы
