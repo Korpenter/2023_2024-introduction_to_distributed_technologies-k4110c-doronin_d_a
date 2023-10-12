@@ -53,9 +53,9 @@ spec:
 ![screenshot_1](https://github.com/Korpenter/krok-school-itmo/assets/141184937/88fb8962-cd8e-45a6-a816-0baf5d9ebd9e)
 </details>
 
-После развёртывания выбирается NodePort сервис для доступа к подам, который описан в файле frontend-nodeport.yaml. Сервис создаётсяи локальный порт пробрасывается на порт контейнера командами:
+После развёртывания выбирается LoadBalancer сервис для доступа к подам, который описан в файле frontend-balancer.yaml. Сервис создаётся, и локальный порт пробрасывается на порт контейнера командами:
 ```shell
-kubectl create -f frontend-Nodeport.yaml
+kubectl create -f frontend-balancer.yaml
 kubectl -- port-forward service/frontend-port 8888:4110
 ```
 <details>
