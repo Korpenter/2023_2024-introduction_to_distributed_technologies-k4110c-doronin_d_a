@@ -87,6 +87,7 @@ spec:
 <details>
   
 <summary>Browser window</summary>
+
 ![screenshot_3](https://github.com/Korpenter/krok-school-itmo/assets/141184937/04eca102-8b0e-4bbf-af2a-a6886191edff)
 </details>
 
