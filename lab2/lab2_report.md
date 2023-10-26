@@ -56,7 +56,7 @@ spec:
 После развёртывания выбирается LoadBalancer сервис для доступа к подам, который описан в файле frontend-balancer.yaml. Сервис создаётся, и локальный порт пробрасывается на порт контейнера командами:
 ```shell
 kubectl create -f frontend-balancer.yaml
-kubectl -- port-forward service/frontend-port 8888:80
+kubectl port-forward service/frontend-balancer 8888:80
 ```
 <details>
 <summary>frontend-balancer.yaml</summary>
