@@ -73,26 +73,26 @@ spec:
 ```
 </details>
 
-![screenshot_1]()
+![screenshot_1](https://github.com/Korpenter/2023_2024-introduction_to_distributed_technologies-k4110c-doronin_d_a/assets/141184937/80060236-2585-4fc7-aea3-db7428985a2e)
 
 После этого, с использованием openssl создаётся TLS сертификат:
 ```shell
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout tls.key -out tls.crt -subj "/CN=lab3test.com"
 ```
 В этой команде:
-openssl req генерирует новый сертификат и ключ.
--x509 указывает на создание самоподписанного сертификата.
--days 365 указывает срок действия сертификата (365 дней).
--newkey rsa:2048 создает новый ключ RSA длиной 2048 бит.
-tls.key и tls.crt - это имена файлов для ключа и сертификата соответственно.
-"/CN=lab3test.com" - это имя хоста, для которого предназначен сертификат.
+ - openssl req генерирует новый сертификат и ключ.
+ - x509 указывает на создание самоподписанного сертификата.   
+ - days 365 указывает срок действия сертификата (365 дней).   
+ - newkey rsa:2048 создает новый ключ RSA длиной 2048 бит.   
+ - tls.key и tls.crt - это имена файлов для ключа и сертификата соответственно.   
+ - "/CN=lab3test.com" - это имя хоста, для которого предназначен сертификат.   
 
 Этот сертификат добавляется в кластер в виде секрета:
 ```shell
 kubectl create secret tls tls-secret --cert=tls.crt --key=tls.key
 ```
   
-![screenshot_2]()
+![231030_03h36m15s_screenshot](https://github.com/Korpenter/2023_2024-introduction_to_distributed_technologies-k4110c-doronin_d_a/assets/141184937/851ab2a7-3a58-491c-96e9-d40a31f5be11)
 
 Был установлен аддон Ingress для Minikube. Это необходимо для управления внешним доступом к сервисам в кластере. Аддон был активирован следующими командами:
 ```shell
@@ -132,16 +132,18 @@ spec:
 ```
 </details>
 
-![screenshot_3]()
+![231030_03h38m45s_screenshot](https://github.com/Korpenter/2023_2024-introduction_to_distributed_technologies-k4110c-doronin_d_a/assets/141184937/4d787869-812c-4b64-9d0b-6eee106f762d)
+
 
 Также был отредактирован файл hosts для доступа к сервису по доменному имени, добавив в hosts `minikube ip` и `FQDN`: `192.168.49.2 lab3test.com`.   
 
 На этом этапе работы очень долго было не понятно почему не подключится к моему сервису ни из браузера, ни по пингу (fqdn). В итоге было обнаружено, что проблема в docker desktop -> https://github.com/kubernetes/ingress-nginx/issues/7686.
 После удаления docker desktop, и установки docker, можно получить доступ к сервису в браузере и посмотреть сертификат:
 
-![screenshot_5]()
+![231030_03h39m27s_screenshot](https://github.com/Korpenter/2023_2024-introduction_to_distributed_technologies-k4110c-doronin_d_a/assets/141184937/e2dbc59b-926a-40e3-83fa-3b1b133eb1bf)
 
-![screenshot_6]()
+![231030_03h39m35s_screenshot](https://github.com/Korpenter/2023_2024-introduction_to_distributed_technologies-k4110c-doronin_d_a/assets/141184937/a952497c-aa33-4e26-90dc-e1ca18cd1d8a)
+
 
 #### Схема организации контейеров и сервисов
-![DIAGRAMM]()
+![231030_04h52m58s_screenshot](https://github.com/Korpenter/2023_2024-introduction_to_distributed_technologies-k4110c-doronin_d_a/assets/141184937/5582dcb1-dd05-4796-9ede-48cdb30831b9)
