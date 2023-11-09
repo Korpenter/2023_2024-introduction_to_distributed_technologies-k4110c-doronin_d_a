@@ -6,7 +6,7 @@ Group: K4110C
 Author: Doronin Dmitrii Alekseevich  
 Lab: Lab3  
 Date of create: 26.10.2023  
-Date of finished:
+Date of finished: 11.9.2023
 
 ## Лабораторная работа №3 "Сертификаты и "секреты" в Minikube, безопасное хранение данных."
 #### Цель работы
