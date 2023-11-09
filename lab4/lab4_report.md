@@ -4,9 +4,9 @@ Course: [Introduction to distributed technologies](https://github.com/itmo-ict-f
 Year: 2023/2024  
 Group: K4110C  
 Author: Doronin Dmitrii Alekseevich  
-Lab: Lab4
+Lab: Lab4  
 Date of create: 30.10.2023  
-Date of finished: 
+Date of finished: 11.9.2023
 
 ## Лабораторная работа №4 "Сертификаты и "секреты" в Minikube, безопасное хранение данных."
 #### Цель работы
